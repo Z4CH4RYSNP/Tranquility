@@ -6,10 +6,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 import javafx.scene.media.AudioClip;
+import java.util.Random;
 
 /**
- * Displays the "Made with TranquilityLITE" splash screen, with the icon and text adjacent.
- * Plays any associated animations.
+ * Displays the "TRANQUILITY" splash screen, with the icon and text adjacent.
+ * Plays any associated animations and sounds.
  *
  * @author      Zachary Sousa
  * @version     1.00
@@ -21,12 +22,20 @@ public class SplashScreen
     private Canvas canvas;
     private Color backdrop;
     private AudioClip tranquility;
+    private AudioClip opening;
+    private AudioClip start;
     
     /**
      * Constructor for SplashScreen
      */
-    public SplashScreen(Canvas canvas, GraphicsContext gc) {
+    public SplashScreen(Canvas canvas, GraphicsContext gc) {  
         tranquility     = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/tranquility.mp3").toExternalForm());
+        start           = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/start.mp3").toExternalForm());
+        if(new Random().nextInt(3) == 0) {
+            opening = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/openingAlt.mp3").toExternalForm());
+        } else {
+            opening = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/opening.mp3").toExternalForm());
+        }
         backdrop        = Color.rgb(51, 54, 59);
         splashIcon      = new SplashIcon(canvas);
         splashText      = new SplashText(canvas);
@@ -42,6 +51,7 @@ public class SplashScreen
      * @param gc The drawing surface
      */
     public void animate(GraphicsContext gc) {
+        opening.play();
         Utilities.pause(5000);
         double movementRate = 15;
         while(movementRate > 0.1) {
@@ -69,5 +79,7 @@ public class SplashScreen
             movementRate = movementRate*0.95;
             Utilities.pause(10);
         }
+        Utilities.pause(1000);
+        start.play();
     }
 }

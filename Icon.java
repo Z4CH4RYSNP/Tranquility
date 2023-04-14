@@ -5,7 +5,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
- import javafx.scene.image.ImageView;
+import javafx.scene.image.ImageView;
 
 /**
  * A basic icon.
@@ -28,7 +28,7 @@ public class Icon
     public Icon(Canvas canvas, String path, double w, double h) {
         icon = new Image(path, w, h, true, true);
         x = canvas.getWidth()/2 - icon.getWidth()/2;
-        y = canvas.getHeight()/2 - icon.getWidth()/2;
+        y = canvas.getHeight()/2 - icon.getHeight()/2;
     }
     
     public void draw(GraphicsContext gc) {

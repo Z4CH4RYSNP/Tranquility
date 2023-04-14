@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SplashScreen
-comment0.text=\r\n\ Displays\ the\ "Made\ with\ TranquilityLITE"\ splash\ screen,\ with\ the\ icon\ and\ text\ adjacent.\r\n\ Plays\ any\ associated\ animations.\r\n\r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
+comment0.text=\r\n\ Displays\ the\ "TRANQUILITY"\ splash\ screen,\ with\ the\ icon\ and\ text\ adjacent.\r\n\ Plays\ any\ associated\ animations\ and\ sounds.\r\n\r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
 comment1.params=canvas\ gc
 comment1.target=SplashScreen(javafx.scene.canvas.Canvas,\ javafx.scene.canvas.GraphicsContext)
 comment1.text=\r\n\ Constructor\ for\ SplashScreen\r\n

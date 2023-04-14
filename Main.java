@@ -30,7 +30,8 @@ public class Main extends Application {
         //stage.setMaximized(true);
         stage.show();
         Canvas canvas = new Canvas(stage.getWidth(), stage.getHeight()); // Set canvas Size in Pixels
-        stage.setTitle("TranquilityLITE"); // Set window title
+        System.out.println(canvas.getWidth() + " " + canvas.getHeight());
+        stage.setTitle("Tranquility"); // Set window title
         root.getChildren().add(canvas);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         
