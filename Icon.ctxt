@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Icon
+comment0.text=\r\n\ A\ basic\ icon.\r\n\r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ \ 1.00\r\n
+comment1.params=canvas\ path
+comment1.target=Icon(javafx.scene.canvas.Canvas,\ java.lang.String)
+comment2.params=canvas\ path\ w\ h
+comment2.target=Icon(javafx.scene.canvas.Canvas,\ java.lang.String,\ double,\ double)
+comment3.params=gc
+comment3.target=void\ draw(javafx.scene.canvas.GraphicsContext)
+comment4.params=
+comment4.target=double\ getX()
+comment5.params=
+comment5.target=double\ getY()
+comment6.params=num
+comment6.target=void\ setX(double)
+comment7.params=num
+comment7.target=void\ setY(double)
+comment8.params=
+comment8.target=double\ getH()
+comment9.params=
+comment9.target=double\ getW()
+numComments=10

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Utilities
+comment0.text=\r\n\ Various\ functions\ that\ are\ used\ throughout\ the\ pgm.\r\n\r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ 1.00\r\n
+comment1.params=duration
+comment1.target=void\ pause(int)
+numComments=2

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=SplashText
+comment0.text=\r\n\ The\ icon\ to\ display\ on\ the\ splash\ screen.\r\n\r\n\ @author\ \ \ \ \ \ Zachary\ Sousa\r\n\ @version\ \ \ \ \ \ 1.00\r\n
+comment1.params=canvas
+comment1.target=SplashText(javafx.scene.canvas.Canvas)
+numComments=2
