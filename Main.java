@@ -33,11 +33,9 @@ public class Main extends Application {
         stage.setResizable(false);
         //stage.setMaximized(true);
         
-        System.out.println(stage.getWidth() + " " + stage.getHeight());
         Canvas canvas = new Canvas(stage.getWidth(), stage.getHeight()); // Set canvas Size in Pixels
         GraphicsContext gc = canvas.getGraphicsContext2D();
         stage.setTitle("Tranquility"); // Set window title
-        System.out.println(canvas.getWidth() + " " + canvas.getHeight());
         
         SplashScreen splashScreen = new SplashScreen(canvas, gc);
 

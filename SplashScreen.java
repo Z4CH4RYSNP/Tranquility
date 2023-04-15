@@ -31,7 +31,7 @@ public class SplashScreen
     public SplashScreen(Canvas canvas, GraphicsContext gc) {  
         tranquility     = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/tranquility.mp3").toExternalForm());
         start           = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/start.mp3").toExternalForm());
-        if(new Random().nextInt(3) == 0) {
+        if(new Random().nextInt(10) == 0) {
             opening = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/openingAlt.mp3").toExternalForm());
         } else {
             opening = new AudioClip(getClass().getResource("/Assets/Pgm/Splash/opening.mp3").toExternalForm());
@@ -85,5 +85,16 @@ public class SplashScreen
         }
         Utilities.pause(1000);
         start.play();
+        movementRate = 13;
+        while(movementRate > -0.1) {
+            splashIcon.setY(splashIcon.getY() - movementRate);
+            
+            gc.setFill(backdrop);
+            gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+            //splashIcon.draw(gc);
+            
+            movementRate = movementRate*0.965;
+            Utilities.pause(10);
+        }
     }
 }
