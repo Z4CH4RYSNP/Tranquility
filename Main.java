@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.media.AudioClip;
 import static javafx.application.Application.launch;
+import javafx.scene.layout.HBox;
 
 /**
  * This is the Main program in which everything runs and is drawn. Everything is controlled here.
@@ -27,19 +28,28 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);
+        stage.setWidth(1920);
+        stage.setHeight(1080);
+        stage.setResizable(false);
         //stage.setMaximized(true);
-        stage.show();
+        
+        System.out.println(stage.getWidth() + " " + stage.getHeight());
         Canvas canvas = new Canvas(stage.getWidth(), stage.getHeight()); // Set canvas Size in Pixels
-        System.out.println(canvas.getWidth() + " " + canvas.getHeight());
-        stage.setTitle("Tranquility"); // Set window title
-        root.getChildren().add(canvas);
         GraphicsContext gc = canvas.getGraphicsContext2D();
+        stage.setTitle("Tranquility"); // Set window title
+        System.out.println(canvas.getWidth() + " " + canvas.getHeight());
         
         SplashScreen splashScreen = new SplashScreen(canvas, gc);
+
         Thread splashThread = new Thread(() -> splashScreen.animate(gc));
         splashThread.start();
         
+        root.getChildren().add(canvas);
         
+        root.getChildren().add(splashScreen.splashText.iconView);
+        root.getChildren().add(splashScreen.splashIcon.iconView);        
+        
+        stage.show();
     }
    
     /**

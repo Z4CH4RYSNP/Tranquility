@@ -15,24 +15,33 @@ import javafx.scene.image.ImageView;
  */
 public class Icon
 {
-    protected Image icon;
+    public ImageView iconView;
     protected double x;
     protected double y;
     
     public Icon(Canvas canvas, String path) {
-        icon = new Image(path, 200, 200, true, true);
-        x = canvas.getWidth()/2 - icon.getWidth()/2;
-        y = canvas.getHeight()/2 - icon.getHeight()/2;
+        iconView = new ImageView(new Image(path));
+        iconView.setFitWidth(200);
+        iconView.setFitHeight(200);
+        iconView.setPreserveRatio(true);
+        iconView.setSmooth(true);
+        x = canvas.getWidth()/2 - iconView.getFitWidth()/2;
+        y = canvas.getHeight()/2 - iconView.getFitHeight()/2;    
+        iconView.setX(x);
+        iconView.setY(y);
+        System.out.println(x + " " + y);
     }
     
     public Icon(Canvas canvas, String path, double w, double h) {
-        icon = new Image(path, w, h, true, true);
-        x = canvas.getWidth()/2 - icon.getWidth()/2;
-        y = canvas.getHeight()/2 - icon.getHeight()/2;
-    }
-    
-    public void draw(GraphicsContext gc) {
-        gc.drawImage(icon, x, y);
+        iconView = new ImageView(path);
+        iconView.setFitWidth(w);
+        iconView.setFitHeight(h);
+        iconView.setPreserveRatio(true);
+        iconView.setSmooth(true);
+        x = canvas.getWidth()/2 - iconView.getFitWidth()/2;
+        y = canvas.getHeight()/2 - iconView.getFitHeight()/2;
+        iconView.setX(x);
+        iconView.setY(y);
     }
     
     public double getX() {
@@ -45,17 +54,23 @@ public class Icon
     
     public void setX(double num) {
         x = num;
+        iconView.setX(num);
     }
     
     public void setY(double num) {
         y = num;
+        iconView.setY(num);
     }
     
-    public double getH() {
-        return icon.getHeight();
+    public double getFit() {
+        return iconView.getFitWidth();
     }
     
-    public double getW() {
-        return icon.getWidth();
+    public void setFit(double w) {
+        iconView.setFitWidth(w);
+    }
+    
+    public void visibility(boolean b) {
+        iconView.setVisible(b);
     }
 }

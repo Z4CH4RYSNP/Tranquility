@@ -16,6 +16,6 @@ import javafx.scene.image.ImageView;
 public class SplashIcon extends Icon
 {   
     public SplashIcon(Canvas canvas) {
-        super(canvas, "/Assets/Pgm/Splash/icon.png");
+        super(canvas, "Assets/Pgm/Splash/icon.png");
     }
 }

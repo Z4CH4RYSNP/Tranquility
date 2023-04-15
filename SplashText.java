@@ -16,7 +16,8 @@ import javafx.scene.image.ImageView;
 public class SplashText extends Icon
 {   
     public SplashText(Canvas canvas) {
-        super(canvas, "/Assets/Pgm/Splash/text.png", 600, 600);
+        super(canvas, "Assets/Pgm/Splash/text.png", 600, 600);
+        //super(canvas, "");
         this.setX(this.getX() + 100);
     }
 }

@@ -17,8 +17,8 @@ import java.util.Random;
  */
 public class SplashScreen
 {
-    private SplashIcon splashIcon;
-    private SplashText splashText;
+    protected SplashIcon splashIcon;
+    protected SplashText splashText;
     private Canvas canvas;
     private Color backdrop;
     private AudioClip tranquility;
@@ -42,7 +42,7 @@ public class SplashScreen
         this.canvas     = canvas;
         gc.setFill(backdrop);
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        splashIcon.draw(gc);
+        //splashIcon.draw(gc);
     }
     
     /**
@@ -52,6 +52,8 @@ public class SplashScreen
      */
     public void animate(GraphicsContext gc) {
         opening.play();
+        splashText.visibility(false);
+        gc.setFill(backdrop);
         Utilities.pause(5000);
         double movementRate = 15;
         while(movementRate > 0.1) {
@@ -59,22 +61,24 @@ public class SplashScreen
             
             gc.setFill(backdrop);
             gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
-            splashIcon.draw(gc);
+            //splashIcon.draw(gc);
             
             movementRate = movementRate*0.95;
             Utilities.pause(10);
         }
-        splashText.draw(gc);
+        //splashText.draw(gc);
+        splashText.visibility(true);
         tranquility.play();
         Utilities.pause(4000);
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
         movementRate = -15;
+        splashText.visibility(false);
         while(movementRate < -0.1) {
             splashIcon.setX(splashIcon.getX() - movementRate);
             
             gc.setFill(backdrop);
             gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
-            splashIcon.draw(gc);
+            //splashIcon.draw(gc);
             
             movementRate = movementRate*0.95;
             Utilities.pause(10);
