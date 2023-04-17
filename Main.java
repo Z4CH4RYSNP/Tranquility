@@ -35,7 +35,7 @@ public class Main extends Application {
         
         Canvas canvas = new Canvas(stage.getWidth(), stage.getHeight()); // Set canvas Size in Pixels
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        stage.setTitle("Tranquility"); // Set window title
+        stage.setTitle("Tranquility2"); // Set window title
         
         SplashScreen splashScreen = new SplashScreen(canvas, gc);
 
