@@ -29,7 +29,6 @@ public class Icon
         y = canvas.getHeight()/2 - iconView.getFitHeight()/2;    
         iconView.setX(x);
         iconView.setY(y);
-        System.out.println(x + " " + y);
     }
     
     public Icon(Canvas canvas, String path, double w, double h) {
